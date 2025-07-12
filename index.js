@@ -10,6 +10,8 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
 
+app.use("/api", router);
+
 app.get("/", (req, res) => {
   res.send("Welcome to Book Store API");
 });
@@ -17,5 +19,5 @@ app.get("/", (req, res) => {
 connectDB();
 
 app.listen(PORT, () => {
-  console.log("app is runing on port " + PORT);
+  console.log("app is running on port " + PORT);
 });
