@@ -8,6 +8,7 @@ const {
   changePassword,
 } = require("../controllers/user.controller");
 
+//all the user router
 router.get("/get-all-users", getAllUsers);
 router.put("/update-user-by-id/:id", updateUserById);
 router.delete("/remove-user/:id", removeUser);
