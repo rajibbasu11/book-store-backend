@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 // User signup
-exports.signup = async (req, res) => {
+exports.addUser = async (req, res) => {
   const { name, email, password, address, phone } = req.body;
   try {
     // Checking existing user
@@ -45,7 +45,7 @@ exports.login = async (req, res) => {
           isAdmin: user.isAdmin,
           token: jwt.sign(
             { id: user._id, isAdmin: user.isAdmin },
-            process.env.JWT_SECRET,
+            process.env.JWT_SECRET || "this is a secret",
             { expiresIn: process.env.JWT_EXPIRY || "1d" }
           ),
         },
