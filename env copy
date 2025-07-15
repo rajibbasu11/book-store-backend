@@ -1,0 +1,4 @@
+PORT = 3001
+MONGO_URI = mongodb+srv://rajibbasu:rajibasu@kathak.zsh3v.mongodb.net/kathak
+JWT_SECRET = your_jwt_secret
+JWT_EXPIRY = 1h
